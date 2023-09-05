@@ -18,8 +18,12 @@ function start(){
       name: "option", 
       choices: [
         "List All Departments",
-        "Option 2",
-        "Option 3"
+        "Add Employee",
+        "Update Employee Role",
+        "View All Roles",
+        "Add Role",
+        "View All Departments",
+        "Add Department"
       ]
     }
   ]).then( response => {
@@ -29,6 +33,37 @@ function start(){
           displayAllDepartments(rows);
           start();
         });
+      case "Add Employee":
+        listAllDepartments().then( ([rows]) => {
+          displayAllDepartments(rows);
+          start();
+        });
+      case "Update Employee Role":
+        listAllDepartments().then( ([rows]) => {
+          displayAllDepartments(rows);
+          start();
+        });
+      case "View All Roles":
+        listAllDepartments().then( ([rows]) => {
+          displayAllDepartments(rows);
+          start();
+        });
+      case "Add Role":
+        listAllDepartments().then( ([rows]) => {
+          displayAllDepartments(rows);
+          start();
+        });
+      case "View All Departments":
+        listAllDepartments().then( ([rows]) => {
+          displayAllDepartments(rows);
+          start();
+        });     
+      case "Add Department":
+        listAllDepartments().then( ([rows]) => {
+          displayAllDepartments(rows);
+          start();
+        });
+
         
         break;
 
