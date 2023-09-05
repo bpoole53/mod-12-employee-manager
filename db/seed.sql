@@ -10,7 +10,7 @@ INSERT INTO department (name)
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
     VALUES
         ('Bob', 'Jones', 1, 1),
-        ('Jeff', 'Smith', 2, NULL),
+        ('Jeff', 'Smith', 2, 2),
         ('Marge', 'Johnson', 3, 3),
         ('John', 'Doe', 4, 4);
 
@@ -24,6 +24,6 @@ INSERT INTO role (title, salary, department_id)
 INSERT INTO manager (manager_name)
     VALUES
         ('Ted Gatsby'),
-        ('Mary Brown'),
+        (NULL),
         ('Alicia Silverstone'),
         ('Dag Swaniels');    
