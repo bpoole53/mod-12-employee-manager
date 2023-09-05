@@ -8,13 +8,6 @@ const { addDepartment } = require("./lib/queries")
 const { addRole } = require("./lib/queries")
 const { updateRole } = require("./lib/queries")
 const { displayAllDepartments } = require("./lib/displays")
-/*
-  There are a lot of menu items presented to users in this app. The only real way you cam manage them 
-  is by creating a function to handle each one.
-
-  I'm giving you a bit of starter code below.
-*/ 
-
 
 function start(){
   inquirer.prompt([
