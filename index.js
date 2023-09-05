@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const connection = require("./config/connection");
 const { listAllDepartments } = require("./lib/queries")
 const { listAllEmployees } = require("./lib/queries")
+const { listAllRoles } = require("./lib/queries")
 const { displayAllDepartments } = require("./lib/displays")
 /*
   There are a lot of menu items presented to users in this app. The only real way you cam manage them 
@@ -49,7 +50,7 @@ function start(){
         });
         break;
       case "View All Roles":
-        listAllDepartments().then( ([rows]) => {
+        listAllRoles().then( ([rows]) => {
           displayAllDepartments(rows);
           start();
         });
