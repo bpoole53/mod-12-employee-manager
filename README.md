@@ -2,6 +2,9 @@
 
 ![Alt text](./assets/mod-12-screenshot.png)
 
+## Video Demonstration
+[A Functionality Walkthrough](https://www.youtube.com/watch?v=PML1gfzRyIo&ab_channel=BenPoole)
+
 ## Description
 This is an application that allows the user to manage an employee database
 
