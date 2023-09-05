@@ -17,22 +17,66 @@ function start(){
       message: "Choose an item from the list below:",
       name: "option", 
       choices: [
-        "List All Departments",
-        "Option 2",
-        "Option 3"
+        "View All Employees",
+        "Add Employee",
+        "Update Employee Role",
+        "View All Roles",
+        "Add Role",
+        "View All Departments",
+        "Add Department",
+        "Quit",
       ]
     }
   ]).then( response => {
     switch(response.option){
-      case "List All Departments":
+      case "View All Employees":
         listAllDepartments().then( ([rows]) => {
           displayAllDepartments(rows);
           start();
         });
-        
         break;
-
-
+      case "Add Employee":
+        listAllDepartments().then( ([rows]) => {
+          displayAllDepartments(rows);
+          start();
+        });
+        break;
+      case "Update Employee Role":
+        listAllDepartments().then( ([rows]) => {
+          displayAllDepartments(rows);
+          start();
+        });
+        break;
+      case "View All Roles":
+        listAllDepartments().then( ([rows]) => {
+          displayAllDepartments(rows);
+          start();
+        });
+        break;
+      case "Add Role":
+        listAllDepartments().then( ([rows]) => {
+          displayAllDepartments(rows);
+          start();
+        });
+        break;
+      case "View All Departments":
+        listAllDepartments().then( ([rows]) => {
+          displayAllDepartments(rows);
+          start();
+        });
+        break;     
+      case "Add Department":
+        listAllDepartments().then( ([rows]) => {
+          displayAllDepartments(rows);
+          start();
+        });        
+        break;
+      case "Quit":
+        listAllDepartments().then( ([rows]) => {
+          displayAllDepartments(rows);
+          start();
+        });        
+        break;  
       default:
         start();
     }
