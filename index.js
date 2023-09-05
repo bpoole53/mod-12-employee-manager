@@ -33,41 +33,43 @@ function start(){
           displayAllDepartments(rows);
           start();
         });
+        break;
       case "Add Employee":
         listAllDepartments().then( ([rows]) => {
           displayAllDepartments(rows);
           start();
         });
+        break;
       case "Update Employee Role":
         listAllDepartments().then( ([rows]) => {
           displayAllDepartments(rows);
           start();
         });
+        break;
       case "View All Roles":
         listAllDepartments().then( ([rows]) => {
           displayAllDepartments(rows);
           start();
         });
+        break;
       case "Add Role":
         listAllDepartments().then( ([rows]) => {
           displayAllDepartments(rows);
           start();
         });
+        break;
       case "View All Departments":
         listAllDepartments().then( ([rows]) => {
           displayAllDepartments(rows);
           start();
-        });     
+        });
+        break;     
       case "Add Department":
         listAllDepartments().then( ([rows]) => {
           displayAllDepartments(rows);
           start();
-        });
-
-        
+        });        
         break;
-
-
       default:
         start();
     }
