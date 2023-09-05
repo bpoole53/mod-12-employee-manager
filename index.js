@@ -216,11 +216,7 @@ function start(){
         })               
         break;
       case "Quit":
-        listAllDepartments().then( ([rows]) => {
-          displayAllDepartments(rows);
-          start();
-        });        
-        break;  
+        process.exit();
       default:
         start();
     }
