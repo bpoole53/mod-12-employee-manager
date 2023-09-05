@@ -4,6 +4,9 @@ const { listAllDepartments } = require("./lib/queries")
 const { listAllEmployees } = require("./lib/queries")
 const { listAllRoles } = require("./lib/queries")
 const { addEmployee } = require("./lib/queries")
+const { addDepartment } = require("./lib/queries")
+const { addRole } = require("./lib/queries")
+const { updateRole } = require("./lib/queries")
 const { displayAllDepartments } = require("./lib/displays")
 /*
   There are a lot of menu items presented to users in this app. The only real way you cam manage them 
@@ -100,6 +103,57 @@ function start(){
             });                 
         break;        
       case "Update Employee Role":
+        inquirer.prompt([
+          {
+            type: "list",
+            message: "Which employee's role do you want to update?",
+            name: "employee",
+            choices: [
+              {
+                name: 'Bob Jones',
+                value: 1
+              },
+              {
+                name: 'Jeff Smith',
+                value: 2,
+              },
+              {
+                name: 'Marge Johnson',
+                value: 3,
+              },
+              {
+                name: 'John Doe',
+                value: 4,
+              },
+            ]},
+          {
+          type: "list",
+          message: "Which role do you want to assign to this employee?",
+          name: "role",
+          choices: [
+            {
+              name: 'Salesman I',
+              value: 1
+            },
+            {
+              name: 'Electrical Engineer',
+              value: 2,
+            },
+            {
+              name: 'Finance Assocaite',
+              value: 3,
+            },
+            {
+              name: 'Lawyer',
+              value: 4,
+            },
+          ]},
+        ]).then (response => {
+          updateRole(response)
+          start();
+        });
+        break;
+      case "View All Departments":
         listAllDepartments().then( ([rows]) => {
           displayAllDepartments(rows);
           start();
@@ -112,8 +166,41 @@ function start(){
         });
         break;
       case "Add Role":
-        listAllDepartments().then( ([rows]) => {
-          displayAllDepartments(rows);
+        inquirer.prompt([
+          {   
+            type: "prompt",
+            message: "What is the name of the role?",
+            name: "title",
+          },
+          {   
+            type: "prompt",
+            message: "What is the salary of the role?",
+            name: "salary",
+          },
+          {
+          type: "list",
+          message: "Which department does the role belong to?",
+          name: "department_id",
+          choices: [
+            {
+              name: 'Sales',
+              value: 1
+            },
+            {
+              name: 'Engineering',
+              value: 2,
+            },
+            {
+              name: 'Finance',
+              value: 3,
+            },
+            {
+              name: 'Legal',
+              value: 4,
+            },
+          ]},
+        ]).then (response => {
+          addRole(response)
           start();
         });
         break;
@@ -124,10 +211,16 @@ function start(){
         });
         break;     
       case "Add Department":
-        listAllDepartments().then( ([rows]) => {
-          displayAllDepartments(rows);
+        inquirer.prompt([
+          {   
+            type: "prompt",
+            message: "What is the department name?",
+            name: "name",
+          },
+        ]).then (response => {
+          addDepartment(response)
           start();
-        });        
+        })               
         break;
       case "Quit":
         listAllDepartments().then( ([rows]) => {
