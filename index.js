@@ -53,7 +53,7 @@ function start(){
           start();
         });
         break;
-      case "Add Role":
+      case "Add Role":\
         listAllDepartments().then( ([rows]) => {
           displayAllDepartments(rows);
           start();
